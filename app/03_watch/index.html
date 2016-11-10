@@ -2,13 +2,14 @@
 <html ng-app="myApp">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Decorator</title>
+		<title>Interceptor</title>
 	</head>
 	<body>
-		<button ng-click="start();">Start</button>
+		<input ng-model="message" /><br/>
+		message: {{message}}<br/>
+		<button ng-click="logScope()">Log</button>
 
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="app.js"></script>
-		<script src="jlg-log.js"></script>
 	</body>
 </html>
