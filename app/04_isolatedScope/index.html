@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		message: <input ng-model="message" /><br/>
+		truc.x: <input ng-model="truc.x" /><br/>
 		<div ng-controller="MyController">
 			scope.$id: {{$id}}<br/>
 			message: {{message}}<br/>
@@ -35,7 +36,7 @@
 		<my-directive></my-directive>
 		<my-directive2></my-directive2>
 		<my-directive3></my-directive3>
-		<my-directive4 msg="message" ></my-directive4>
+		<my-directive4 msg="message" truc="truc"></my-directive4>
 
 		<button ng-click="logScope()">Log</button>
 

@@ -13,6 +13,9 @@
 		'ngInject';
 
 		$rootScope.message = 'coucou';
+		$rootScope.truc = {
+			x: 15
+		};
 
 		$rootScope.logScope = function() {
 			console.log('scope', $rootScope);
@@ -64,11 +67,13 @@
 				message2: '@msg',
 				message3: '<msg',
 				message4: '&msg',
+				truc: '=truc',
 			},
 			template: '<div>message1: <input ng-model="message1" /></div>' +
 				'<div>message2: <input ng-model="message2" /></div>' +
 				'<div>message3: <input ng-model="message3" /></div>' +
-				'<div>message4: {{message4()}}</div>',
+				'<div>message4: {{message4()}}</div>' +
+				'<div>truc.x: {{truc.x}}</div>',
 			link: function() {
 				console.log('myDirective4 postlink', arguments);
 			}
