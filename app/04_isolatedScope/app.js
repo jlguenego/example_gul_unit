@@ -63,10 +63,12 @@
 				message1: '=msg',
 				message2: '@msg',
 				message3: '<msg',
+				message4: '&msg',
 			},
 			template: '<div>message1: <input ng-model="message1" /></div>' +
 				'<div>message2: <input ng-model="message2" /></div>' +
-				'<div>message3: <input ng-model="message3" /></div>',
+				'<div>message3: <input ng-model="message3" /></div>' +
+				'<div>message4: {{message4()}}</div>',
 			link: function() {
 				console.log('myDirective4 postlink', arguments);
 			}
