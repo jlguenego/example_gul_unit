@@ -1,12 +1,6 @@
 (function() {
 	'use strict';
 
-	// TODO :
-	// 1) remove the expression in the html -> look at $rootScope.$$watcher
-	// 2) remove the watch expression in the javascript -> look at $rootScope.$$watcher
-	// 3) remove the input in the javascript -> look at $rootScope.$$watcher
-
-
 	var app = angular.module('myApp', []);
 
 	app.run(function($rootScope) {
