@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Scope and isolated scope</title>
+		<style>
+[ng-controller] {
+	border: 1px solid black;
+}
+		</style>
+	</head>
+	<body>
+		message: <input ng-model="message" /><br/>
+		<div ng-controller="MyController">
+			scope.$id: {{$id}}<br/>
+			message: {{message}}<br/>
+			message: <input ng-model="message" /><br/>
+			object.x: {{object.x}}<br/>
+			object.x: <input ng-model="object.x" /><br/>
+			<div ng-controller="MyController">
+				scope.$id: {{$id}}<br/>
+				message: {{message}}<br/>
+				message: <input ng-model="message" /><br/>
+				object.x: {{object.x}}<br/>
+				object.x: <input ng-model="object.x" /><br/>
+				<div ng-controller="MyController as ctrl">
+					scope.$id: {{$id}}<br/>
+					message: {{message}}<br/>
+					message: <input ng-model="message" /><br/>
+					object.x: {{object.x}}<br/>
+					object.x: <input ng-model="object.x" /><br/>
+				</div>
+			</div>
+		</div>
+		<my-directive></my-directive>
+		<my-directive2></my-directive2>
+		<my-directive3></my-directive3>
+		<my-directive4 msg="message"></my-directive4>
+
+		<button ng-click="logScope()">Log</button>
+
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
