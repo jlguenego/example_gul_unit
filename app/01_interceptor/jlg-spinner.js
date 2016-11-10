@@ -1,6 +1,9 @@
 (function() {
 	'use strict';
 
+	// TODO: add a filter on route template in order to
+	// not interpret a route template as an ajax request.
+
 	var app = angular.module('jlg-spinner', ['angularSpinner']);
 
 	app.run(function($rootScope, $http, $q) {
