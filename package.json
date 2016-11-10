@@ -1,0 +1,28 @@
+{
+  "name": "example_gul_unit",
+  "version": "0.0.1",
+  "description": "Exemples unitaires Angular pour Orsys GUL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlguenego/example_gul_unit.git"
+  },
+  "keywords": [
+    "orsys",
+    "angular",
+    "example"
+  ],
+  "author": "Jean-Louis GUENEGO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlguenego/example_gul_unit/issues"
+  },
+  "homepage": "https://github.com/jlguenego/example_gul_unit#readme",
+  "devDependencies": {
+    "express": "4.14.0",
+    "serve-index": "1.8.0"
+  }
+}

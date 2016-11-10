@@ -1,0 +1,22 @@
+{
+  "name": "example_gul_unit",
+  "description": "Exemples unitaires Angular pour Orsys GUL",
+  "main": "index.js",
+  "authors": [
+    "Jean-Louis GUENEGO"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "orsys",
+    "angular",
+    "example"
+  ],
+  "homepage": "https://github.com/jlguenego/example_gul_unit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
