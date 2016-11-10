@@ -25,6 +25,14 @@
 			console.log('scope', $rootScope);
 		};
 
+		$rootScope.doNotDigest = function() {
+			setTimeout(function() {
+				$rootScope.test = '';
+				console.log('message reset');
+				// where is my digest... ???
+			}, 20);
+		};
+
 	});
 
 })();
