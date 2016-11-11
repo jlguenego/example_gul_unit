@@ -7,6 +7,7 @@
 		'ngInject';
 		$rootScope.start = function() {
 			$log.debug('start', arguments);
+			$log.debug('end', arguments);
 		};
 	});
 
