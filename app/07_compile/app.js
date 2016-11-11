@@ -49,8 +49,12 @@
 					}
 					console.log('html', html);
 					elt.html(html);
-					// $compile(elt.contents())(scope); // compare this line with the next one...
-					$compile(elt)(scope);
+					// var linkingFn = $compile(elt.contents()); // compare this line with the next one...
+					var linkingFn = $compile(elt);
+					//console.log('compile', compile);
+					console.log('linkingFn', linkingFn.toString());
+					var node = linkingFn(scope);
+					console.log('node', node);
 					checkValidity(note);
 				};
 

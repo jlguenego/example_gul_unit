@@ -6,11 +6,16 @@
 	// 2) remove the watch expression in the javascript -> look at $rootScope.$$watcher
 	// 3) remove the input in the javascript -> look at $rootScope.$$watcher
 
+	// call it after all modules have been declared. or...
+	angular.element(document).ready(function() {
+		console.log('bootstrap', arguments);
+		angular.bootstrap(document, ['myApp'], {strictDi: true});
+	});
 
 	var app = angular.module('myApp', []);
 
-	app.run(function($rootScope) {
-		'ngInject';
+	app.run(['$rootScope', function($rootScope) {
+		//'ngInject';
 
 		$rootScope.$watch('message2', function() {
 			console.log('watch message', arguments);
@@ -23,6 +28,9 @@
 			}
 
 		};
-	});
+	}]);
+
+
+
 
 })();
