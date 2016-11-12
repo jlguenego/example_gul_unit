@@ -5,8 +5,15 @@
 		<title>BindToController Example</title>
 	</head>
 	<body>
+		Toto: <input ng-model="toto" /><br/>
 
-		<dir1 truc="'toto'"></dir1>
+		<dir1 truc="toto"></dir1>
+
+		<parent-dir>
+			<child-dir></child-dir>
+			<child-dir></child-dir>
+			<child-dir></child-dir>
+		</parent-dir>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="app.js"></script>
 	</body>

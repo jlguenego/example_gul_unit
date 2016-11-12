@@ -6,7 +6,7 @@
 	app.run(function($rootScope) {
 		'ngInject';
 
-		$rootScope.message = 'coucou';
+		$rootScope.toto = 'coucou';
 
 	});
 
@@ -30,5 +30,44 @@
 		};
 	});
 
+	app.directive('parentDir', function() {
+		'ngInject';
+		return {
+			controller: function() {
+				console.log('parentCtrl', this);
+				this.counter = 0;
+				this.$onInit = function() {
+					console.log('parentCtrl $onInit', arguments);
+				};
+			},
+			controllerAs: 'parentCtrl',
+			link: function() {
+				console.log('parentDir link', arguments);
+			}
+		};
+	});
+
+	app.directive('childDir', function() {
+		'ngInject';
+		return {
+			require: {
+				'parent': '^^parentDir'
+			},
+			bindToController: true,
+			controller: function() {
+				console.log('childCtrl', this);
+				console.log('childCtrl.parent', this.parent);
+				this.$onInit = function() {
+					console.log('childCtrl $onInit', arguments);
+					console.log('childCtrl.parent', this.parent);
+					this.parent.counter++;
+				};
+			},
+			controllerAs: 'childCtrl',
+			link: function() {
+				console.log('childDir link', arguments);
+			}
+		};
+	});
 
 })();
