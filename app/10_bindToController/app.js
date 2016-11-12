@@ -33,6 +33,7 @@
 	app.directive('parentDir', function() {
 		'ngInject';
 		return {
+			scope: {},
 			controller: function() {
 				console.log('parentCtrl', this);
 				this.counter = 0;
@@ -50,6 +51,7 @@
 	app.directive('childDir', function() {
 		'ngInject';
 		return {
+			scope: {},
 			require: {
 				'parent': '^^parentDir'
 			},
