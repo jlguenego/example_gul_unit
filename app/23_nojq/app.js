@@ -3,6 +3,11 @@
 
 	var app = angular.module('myApp', []);
 
+	app.config(['$compileProvider', function ($compileProvider) {
+		// comment this to go in debug mode (default)
+		$compileProvider.debugInfoEnabled(false);
+	}]);
+
 	app.controller('MyCtrl', function($element) {
 		'ngInject';
 
@@ -12,7 +17,11 @@
 		var injector = $element.injector();
 		console.log('injector', injector);
 		var $rootScope = injector.get('$rootScope');
+		console.log('$rootScope', $rootScope);
+
+		// not working in production mode.
 		var scope = $element.scope();
+		console.log('scope', scope);
 
 		scope.getInjector = function() {
 			console.log('injector', injector);
@@ -21,6 +30,8 @@
 			console.log('$.fn.jquery', $.fn.jquery);
 		};
 	});
+
+	console.log('module myApp', app);
 
 
 
