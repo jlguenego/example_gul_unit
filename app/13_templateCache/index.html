@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>$templateCache Example</title>
+		<style>
+[ng-click] {
+	cursor: pointer;
+}
+		</style>
+	</head>
+	<body>
+		<div ng-include="'./t1.html'"></div>
+		<div ng-include="'./t2.html'"></div>
+		<div ng-include="'./t3.html'"></div>
+		<script type="text/ng-template" id="./t2.html">
+<b ng-click="click('yeahhh')">hello</b>
+		</script>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
