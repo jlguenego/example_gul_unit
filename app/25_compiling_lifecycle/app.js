@@ -25,7 +25,9 @@
 					},
 				};
 
-			}
+			},
+			templateUrl: 'tmpl/dir1.html',
+			transclude: true
 
 		};
 	});
@@ -52,7 +54,9 @@
 					},
 				};
 
-			}
+			},
+			templateUrl: 'tmpl/dir2.html',
+			transclude: true
 
 		};
 	});

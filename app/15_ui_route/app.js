@@ -4,6 +4,8 @@
 	var app = angular.module('myApp', ['ui.router']);
 
 	app.config(function($stateProvider) {
+		'ngInject';
+
 		var helloState = {
 			name: 'hello',
 			url: '/hello',

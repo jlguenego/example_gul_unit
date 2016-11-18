@@ -4,6 +4,21 @@ var serveIndex = require('serve-index');
 var app = express();
 
 var htdocs = '.';
+
+var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*'];
+
+app.all(slowUrl, function(req, res, next) {
+	console.log('slow url - req.url', req.url);
+	setTimeout(function() {
+		next();
+	}, 2000);
+});
+
+app.use(function(req, res, next) {
+	console.log('req.url', req.url);
+	next();
+});
+
 app.use(express.static(htdocs));
 app.use(serveIndex(htdocs, {icons: true}));
 
