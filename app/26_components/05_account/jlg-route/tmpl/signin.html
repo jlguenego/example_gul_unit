@@ -8,8 +8,16 @@
 </mobile>
 <pc>
 	<form name="signinForm" ng-submit="$ctrl.signin();">
-		Email : <input ng-model="signin.email" placeholder="Ex: jlguenego@gmail.com"/><br/>
-		<input type="password" placeholder="password" ng-model="signin.password" /><br/>
-		<input type="submit" value="Valider" />
+		<table>
+			<tr>
+				<td>Email : </td><td><input ng-model="signin.email" placeholder="Ex: jlguenego@gmail.com"/></td>
+			</tr>
+			<tr>
+				<td>Password : </td><td><input type="password" placeholder="password" ng-model="signin.password" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Valider" /></td>
+			</tr>
+		</table>
 	</form>
 </pc>
