@@ -1,18 +1,18 @@
 <home>
 	<mobile ng-show="account">
 		<h1>Bienvenue {{account.firstname}} {{account.lastname | uppercase }} en version Mobile&nbsp;!</h1>
-		<button >Connecte toi&nbsp;!</button>
+		<button ui-sref="signin">Connecte toi&nbsp;!</button>
 	</mobile>
 	<mobile ng-hide="account">
 		<h1>Bienvenue sur ce super site web en version Mobile&nbsp;!</h1>
-		<button >Connecte toi&nbsp;!</button>
+		<button ui-sref="signin">Connecte toi&nbsp;!</button>
 	</mobile>
 	<pc ng-show="account">
 		<h1>Bienvenue {{account.firstname}} {{account.lastname | uppercase }} en version PC&nbsp;!</h1>
-		<button >Connecte toi&nbsp;!</button>
+		<button ui-sref="signin">Connecte toi&nbsp;!</button>
 	</pc>
 	<pc ng-hide="account">
 		<h1>Bienvenue sur ce super site web en version PC&nbsp;!</h1>
-		<button >Connecte toi&nbsp;!</button>
+		<button ui-sref="signin">Connecte toi&nbsp;!</button>
 	</pc>
 </home>

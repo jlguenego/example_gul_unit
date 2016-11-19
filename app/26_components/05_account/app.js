@@ -23,7 +23,7 @@
 	};
 
 	app.component('jlgResponsive', {
-		controller: function($window, $scope) {
+		controller: function($window, $scope, $document) {
 			'ngInject';
 			console.log('jlgResponsive controller', arguments, this);
 			var ctrl = this;
@@ -32,6 +32,23 @@
 				if (mobilecheck()) {
 					console.log('mobile mode');
 					this.css = 'pc { display: none !important} mobile { display: block}';
+
+					// this can be replaced by media queries, but we could decide that angular should know.
+					if ($window.innerWidth > $window.innerHeight) {
+						console.log('mobile horizontal mode', $window.screen.orientation);
+						angular.element($document[0].body).addClass('landscape');
+					} else {
+						console.log('mobile vertical mode', $window.screen.orientation);
+						angular.element($document[0].body).removeClass('landscape');
+					}
+
+					// disable scrolling
+					//document.ontouchmove = function(event){
+					//	event.preventDefault();
+					//}
+
+
+
 				} else {
 					console.log('pc mode');
 					this.css = 'mobile { display: none !important} pc { display: block}';

@@ -1,4 +1,4 @@
-body, a {
+html, body, a {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
@@ -9,7 +9,7 @@ body, a {
 /* Header Mobile */
 
 jlg-menu > mobile {
-	height: 60px;
+	height: 0px;
 }
 
 jlg-menu > mobile > div {
@@ -150,11 +150,10 @@ home {
 
 home > mobile {
 	display: block;
-	padding: 210px 0px 0px 0px;
+	padding: 100px 0px 0px 0px;
 	margin: 0px;
 	color: hsla(120, 100%, 20%, 1);
 	background-image: url('../../img/suzana-phare.jpg');
-	height: 427px;
 }
 
 home > mobile > h1 {
@@ -167,13 +166,79 @@ home > mobile > h1 {
 }
 
 home > mobile > button {
-	background-color: hsla(120, 100%, 20%, 1);
+	background-color: hsla(0, 100%, 40%, 1);
 	color: white;
 	padding: 10px;
 	border-radius: 8px;
 	border: 1px solid black;
 	cursor: pointer;
-	margin: 20px;
+	margin: 80px 20px;
+	font-size: 16px;
 }
+
+/* all mobile */
+@media (max-height: 736px) and (orientation: landscape) {
+	html {
+		background-color: black;
+	}
+}
+
+/* iphone 5 */
+@media (max-width: 320px) and (orientation: portrait) {
+	home > mobile {
+		height: 478px;
+		background-image: url('../../img/suzana-phare-iphone5.jpg');
+	}
+}
+
+/* iphone 5 landscape */
+@media (max-height: 320px) and (orientation: landscape) {
+	home > mobile {
+		height: 320px;
+		background-image: url('../../img/sea-from-phare-iphone5.jpg');
+	}
+
+	jlg-menu > mobile > div {
+		position: absolute;
+	}
+
+	home > mobile > h1 {
+		margin-top: 20px;
+	}
+
+	home > mobile > button {
+		margin-top: 35px;
+	}
+}
+
+/* iphone 6 and nexus */
+@media (min-width: 321px) and (max-width: 414px) {
+	home > mobile {
+		height: 648px;
+		background-image: url('../../img/suzana-phare-iphone6.jpg');
+	}
+
+	home > mobile > button {
+		margin: 220px 20px;
+	}
+}
+
+/* iphone 6 and nexus landscape */
+@media (max-height: 736px) and (orientation: landscape) {
+	home > mobile {
+		height: 420px;
+		padding: 60px 0px 0px 0px;
+	}
+
+	jlg-menu > mobile > div {
+		position: absolute;
+	}
+
+	html {
+		background-image: url('../../img/sea-from-phare-iphone6.jpg');
+	}
+}
+
+
 
 
