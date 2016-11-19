@@ -1,0 +1,179 @@
+body, a {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    color: hsla(120, 100%, 20%, 1);
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+
+/* Header Mobile */
+
+jlg-menu > mobile {
+	height: 60px;
+}
+
+jlg-menu > mobile > div {
+    position: fixed;
+    top: 0px;
+    height: 60px;
+    padding:0px;
+    width: 100%;
+    display: block;
+}
+
+jlg-menu > mobile > div > div {
+    display: table;
+    width: 100%;
+    background-color: hsla(120, 100%, 20%, 1);
+	color: white;
+	height: 60px;
+}
+
+jlg-menu > mobile .back {
+    display: table-cell;
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    vertical-align: top;
+    padding: 5px 5px;
+}
+jlg-menu > mobile .back i {
+    color: #fff;
+    font-size: 50px;
+}
+jlg-menu > mobile .logo {
+    display: table-cell;
+    text-align: center;
+    color: white;
+}
+jlg-menu > mobile .logo img {
+    width: 200px;
+    margin-top: 5px;
+}
+
+jlg-menu > mobile .menu {
+    display: table-cell;
+    margin: 0px;
+    width: 50px;
+    vertical-align: top;
+    padding: 5px 5px;
+}
+jlg-menu > mobile .menu i {
+    color: #fff;
+    font-size: 50px;
+}
+
+/* Menu content */
+
+.jlg-menu-content {
+    display: block;
+    background-color: white;
+}
+
+.jlg-menu-content a {
+    display: block;
+    border: 1px solid hsla(120, 100%, 20%, 1);
+    padding: 10px;
+    width: 100%;
+    font-size: 30px;
+	text-decoration: none;
+}
+
+.jlg-menu-content a i {
+    display: inline-block;
+    width: 30%;
+    font-size: 50px;
+    height: 100%;
+}
+
+.jlg-menu-content a span {
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px;
+    height: 100%;
+}
+
+/* Header PC */
+
+jlg-menu > pc {
+	height: 58px;
+}
+
+jlg-menu > pc > div {
+    position: fixed;
+    top: 0px;
+    padding:0px;
+    width: 100%;
+    display: block;
+	border-bottom: 1px solid hsla(120, 5%, 50%, 1);
+	height: 58px;
+}
+
+/* modify the logo... */
+img-svg #consulting * {
+    fill: black !important;
+}
+
+jlg-menu > pc .utilities {
+    float: right;
+	padding: 10px;
+}
+
+.utilities button {
+    background-color: hsla(120, 100%, 20%, 1);
+	color: white;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+/* Home */
+
+ui-view {
+	display: block;
+	padding:0px;
+	margin: 0px;
+}
+
+route-home {
+	display: block;
+	padding:0px;
+	margin: 0px;
+}
+
+home {
+	display: block;
+	padding:0px;
+	margin: 0px;
+}
+
+home > mobile {
+	display: block;
+	padding: 210px 0px 0px 0px;
+	margin: 0px;
+	color: hsla(120, 100%, 20%, 1);
+	background-image: url('../../img/suzana-phare.jpg');
+	height: 427px;
+}
+
+home > mobile > h1 {
+	display: block;
+	padding:0px;
+	margin: 20px;
+	text-align: center;
+	background-color: hsla(120, 100%, 95%, 0.8);
+	font-size: 30px;
+}
+
+home > mobile > button {
+	background-color: hsla(120, 100%, 20%, 1);
+	color: white;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid black;
+	cursor: pointer;
+	margin: 20px;
+}
+
+

@@ -1,0 +1,31 @@
+<mobile>
+	<div>
+		<div>
+			<div class="back">
+				<i ng-show="$root.isBackPresent" ng-click="jlgMenu.off(); $root.back();" class="fa fa-chevron-left" aria-hidden="true"></i>
+			</div>
+			<div class="logo">
+				<a ng-click="jlgMenu.off()" ui-sref="home"><img src="../../img/jlg-consulting.svg"/></a>
+			</div>
+			<div class="menu">
+				<i ng-click="jlgMenu.toggle()" class="fa fa-bars" aria-hidden="true"></i>
+			</div>
+		</div>
+
+		<div class="jlg-menu-content" ng-show="jlgMenu.isMenuOn">
+			<div>
+				<a ng-click="jlgMenu.toggle();" ui-sref="signin"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se connecter</span></a>
+			</div>
+		</div>
+	</div>
+</mobile>
+<pc>
+	<div>
+		<div class="utilities">
+			<button ui-sref="signin" ><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se connecter</span></button>
+		</div>
+		<div class="logo">
+			<a ng-click="jlgMenu.off()" ui-sref="home"><img-svg src="../../img/jlg-consulting.svg"><img-svg></a>
+		</div>
+	</div>
+</pc>
