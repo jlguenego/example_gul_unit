@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('myApp', ['ngSanitize', 'jlg-route']);
+	var app = angular.module('myApp', ['ngSanitize', 'jlg-route', 'jlg-navigation', 'jlg-debug-events']);
 
 	app.component('jlgHeader', {
 		controller: function() {
@@ -53,14 +53,12 @@
 			console.log('jlgMenu controller', arguments, this);
 			var ctrl = this;
 
-			this.isBackPresent = true;
 			this.isMenuOn = false;
 			this.off = function() {
 				console.log('off');
+				this.isMenuOn = false;
 			};
-			this.back = function() {
-				console.log('back');
-			};
+
 			this.toggle = function() {
 				console.log('toggle');
 				this.isMenuOn = !this.isMenuOn;

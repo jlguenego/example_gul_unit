@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('jlg-route', ['ui.router']);
+	var app = angular.module('jlg-route', ['ui.router', 'ui.router.state.events']);
 
 	app.component('routeHome', {
 		templateUrl: 'jlg-route/tmpl/home.html'
@@ -18,11 +18,13 @@
 			{
 				name: 'home',
 				url: '/',
-				component: 'routeHome'
+				component: 'routeHome',
+				back: false
 			}, {
 				name: 'signin',
 				url: '/signin',
-				component: 'signin'
+				component: 'signin',
+				back: true
 			}
 		]
 
@@ -32,6 +34,20 @@
 		});
 	});
 
+	app.run(function($rootScope, $state) {
+		'ngInject';
+		console.log('jlg-route run', arguments);
+
+		var isBackPresent = function() {
+			return $state.$current.back;
+		};
+
+		$rootScope.isBackPresent = isBackPresent();
+		$rootScope.$on('$stateChangeSuccess', function() {
+			console.log('$stateChangeStart start', arguments);
+			$rootScope.isBackPresent = isBackPresent();
+		});
+	});
 
 
 })();
