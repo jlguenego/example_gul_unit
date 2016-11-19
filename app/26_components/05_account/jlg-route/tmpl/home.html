@@ -1,18 +1,14 @@
-<home>
-	<mobile ng-show="account">
-		<h1>Bienvenue {{account.firstname}} {{account.lastname | uppercase }} en version Mobile&nbsp;!</h1>
-		<button ui-sref="signin">Connecte toi&nbsp;!</button>
-	</mobile>
-	<mobile ng-hide="account">
-		<h1>Bienvenue sur ce super site web en version Mobile&nbsp;!</h1>
-		<button ui-sref="signin">Connecte toi&nbsp;!</button>
-	</mobile>
-	<pc ng-show="account">
-		<h1>Bienvenue {{account.firstname}} {{account.lastname | uppercase }} en version PC&nbsp;!</h1>
-		<button ui-sref="signin">Connecte toi&nbsp;!</button>
-	</pc>
-	<pc ng-hide="account">
-		<h1>Bienvenue sur ce super site web en version PC&nbsp;!</h1>
-		<button ui-sref="signin">Connecte toi&nbsp;!</button>
-	</pc>
-</home>
+<mobile ng-show="$root.account">
+	<h1>Bienvenue {{$root.account.firstname}} {{$root.account.lastname | uppercase }} en version Mobile&nbsp;!</h1>
+</mobile>
+<mobile ng-hide="$root.account">
+	<h1>Bienvenue sur ce super site web en version Mobile&nbsp;!</h1>
+	<button ui-sref="signin">Connecte toi&nbsp;!</button>
+</mobile>
+<pc ng-show="$root.account">
+	<h1>Bienvenue {{$root.account.firstname}} {{$root.account.lastname | uppercase }} en version PC&nbsp;!</h1>
+</pc>
+<pc ng-hide="$root.account">
+	<h1>Bienvenue sur ce super site web en version PC&nbsp;!</h1>
+	<button ui-sref="signin">Connecte toi&nbsp;!</button>
+</pc>

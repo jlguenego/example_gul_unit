@@ -1,12 +1,15 @@
-<mobile ng-show="account">
-	<h1>Bienvenue {{account.firstname}} {{account.lastname | uppercase }}!</h1>
-	<button >Connecte toi !</button>
+<mobile>
+	<form name="signinForm" ng-submit="$ctrl.signin();">
+		<input ng-model="signin.email" placeholder="Ex: jlguenego@gmail.com"/>
+		<input type="password" placeholder="password" ng-model="signin.password" />
+		<button ng-click="signinForm.$submit();">Valider</button>
 
-</mobile>
-<mobile ng-hide="account">
-	<h1>Bienvenue sur ce super site web!</h1>
-	<button >Connecte toi !</button>
+	</form>
 </mobile>
 <pc>
-	signin for pc
+	<form name="signinForm" ng-submit="$ctrl.signin();">
+		Email : <input ng-model="signin.email" placeholder="Ex: jlguenego@gmail.com"/><br/>
+		<input type="password" placeholder="password" ng-model="signin.password" /><br/>
+		<input type="submit" value="Valider" />
+	</form>
 </pc>

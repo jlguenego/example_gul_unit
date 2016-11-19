@@ -3,11 +3,22 @@
 
 	var app = angular.module('jlg-route', ['ui.router', 'ui.router.state.events']);
 
-	app.component('routeHome', {
+	app.component('home', {
 		templateUrl: 'jlg-route/tmpl/home.html'
 	});
 
 	app.component('signin', {
+		controller: function($state, $rootScope) {
+			'ngInject';
+			this.signin = function() {
+				console.log('signin http', arguments);
+				$rootScope.account = {
+					firstname: 'Suzana',
+					lastname: 'GUENEGO'
+				};
+				$state.go('home');
+			};
+		},
 		templateUrl: 'jlg-route/tmpl/signin.html'
 	});
 
@@ -18,7 +29,7 @@
 			{
 				name: 'home',
 				url: '/',
-				component: 'routeHome',
+				component: 'home',
 				back: false
 			}, {
 				name: 'signin',
@@ -38,6 +49,8 @@
 	app.run(function($rootScope, $state) {
 		'ngInject';
 		console.log('jlg-route run', arguments);
+
+		$rootScope.account = undefined;
 
 		var isBackPresent = function() {
 			return $state.$current.back;

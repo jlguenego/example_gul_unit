@@ -13,8 +13,11 @@
 		</div>
 
 		<div class="jlg-menu-content" ng-show="jlgMenu.isMenuOn">
-			<div>
+			<div ng-show="!$root.account">
 				<a ng-click="jlgMenu.toggle();" ui-sref="signin"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se connecter</span></a>
+			</div>
+			<div ng-show="$root.account">
+				<a ng-click="jlgMenu.toggle(); $root.account = undefined" ui-sref="signout"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se déconnecter</span></a>
 			</div>
 		</div>
 	</div>
@@ -22,7 +25,8 @@
 <pc>
 	<div>
 		<div class="utilities">
-			<button ui-sref="signin" ><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se connecter</span></button>
+			<button ui-sref="signin" ng-show="!$root.account"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se connecter</span></button>
+			<button ng-click="$root.account = undefined" ng-show="$root.account"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Se déconnecter</span></button>
 		</div>
 		<div class="logo">
 			<a ng-click="jlgMenu.off()" ui-sref="home"><img-svg src="../../img/jlg-consulting.svg"><img-svg></a>

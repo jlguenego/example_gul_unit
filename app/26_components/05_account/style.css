@@ -68,15 +68,19 @@ jlg-menu > mobile .menu i {
 .jlg-menu-content {
     display: block;
     background-color: white;
+	padding: 0px;
+	margin: 0px;
 }
 
 .jlg-menu-content a {
     display: block;
     border: 1px solid hsla(120, 100%, 20%, 1);
     padding: 10px;
+	margin: 0px;
     width: 100%;
     font-size: 30px;
 	text-decoration: none;
+	background-color: white;
 }
 
 .jlg-menu-content a i {
@@ -128,117 +132,9 @@ jlg-menu > pc .utilities {
 	cursor: pointer;
 }
 
-/* Home */
-
 ui-view {
 	display: block;
 	padding:0px;
 	margin: 0px;
 }
-
-route-home {
-	display: block;
-	padding:0px;
-	margin: 0px;
-}
-
-home {
-	display: block;
-	padding:0px;
-	margin: 0px;
-}
-
-home > mobile {
-	display: block;
-	padding: 100px 0px 0px 0px;
-	margin: 0px;
-	color: hsla(120, 100%, 20%, 1);
-	background-image: url('../../img/suzana-phare.jpg');
-}
-
-home > mobile > h1 {
-	display: block;
-	padding:0px;
-	margin: 20px;
-	text-align: center;
-	background-color: hsla(120, 100%, 95%, 0.8);
-	font-size: 30px;
-}
-
-home > mobile > button {
-	background-color: hsla(0, 100%, 40%, 1);
-	color: white;
-	padding: 10px;
-	border-radius: 8px;
-	border: 1px solid black;
-	cursor: pointer;
-	margin: 80px 20px;
-	font-size: 16px;
-}
-
-/* all mobile */
-@media (max-height: 736px) and (orientation: landscape) {
-	html {
-		background-color: black;
-	}
-}
-
-/* iphone 5 */
-@media (max-width: 320px) and (orientation: portrait) {
-	home > mobile {
-		height: 478px;
-		background-image: url('../../img/suzana-phare-iphone5.jpg');
-	}
-}
-
-/* iphone 5 landscape */
-@media (max-height: 320px) and (orientation: landscape) {
-	home > mobile {
-		height: 320px;
-		background-image: url('../../img/sea-from-phare-iphone5.jpg');
-	}
-
-	jlg-menu > mobile > div {
-		position: absolute;
-	}
-
-	home > mobile > h1 {
-		margin-top: 20px;
-	}
-
-	home > mobile > button {
-		margin-top: 35px;
-	}
-}
-
-/* iphone 6 and nexus */
-@media (min-width: 321px) and (max-width: 414px) {
-	home > mobile {
-		height: 648px;
-		background-image: url('../../img/suzana-phare-iphone6.jpg');
-	}
-
-	home > mobile > button {
-		margin: 220px 20px;
-	}
-}
-
-/* iphone 6 and nexus landscape */
-@media (max-height: 736px) and (orientation: landscape) {
-	home > mobile {
-		height: 420px;
-		padding: 60px 0px 0px 0px;
-	}
-
-	jlg-menu > mobile > div {
-		position: absolute;
-	}
-
-	html {
-		background-image: url('../../img/sea-from-phare-iphone6.jpg');
-	}
-}
-
-
-
 
