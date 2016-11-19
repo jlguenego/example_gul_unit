@@ -98,6 +98,9 @@ jlg-menu > mobile .menu i {
 }
 
 /* Header PC */
+pc {
+	min-width: 500px;
+}
 
 jlg-menu > pc {
 	height: 58px;
@@ -105,12 +108,14 @@ jlg-menu > pc {
 
 jlg-menu > pc > div {
     position: fixed;
+	min-width: 500px;
     top: 0px;
     padding:0px;
     width: 100%;
     display: block;
 	border-bottom: 1px solid hsla(120, 5%, 50%, 1);
 	height: 58px;
+	background-color: white;
 }
 
 /* modify the logo... */

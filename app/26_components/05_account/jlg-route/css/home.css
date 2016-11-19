@@ -104,13 +104,29 @@ home > pc {
 	height: 960px;
 }
 
-home > pc > h1 {
+home > pc > div {
+	float: right;
+	width: 50%;
+}
+
+home > pc > div > h1 {
 	display: block;
-	padding:0px;
-	margin: 0px;
+	padding: 2%;
+	margin: 2%;
 	text-align: center;
 	background-color: hsla(120, 100%, 95%, 0.9);
 	font-size: 30px;
+
+}
+
+home > pc > div > button {
+	background-color: hsla(0, 100%, 90%, 0.9);
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid black;
+	cursor: pointer;
+	margin: 80px 20px;
+	font-size: 16px;
 }
 
 
