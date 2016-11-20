@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- for IE8 and IE9 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>UI Route example</title>
+		<style>
+
+.active { color: red; font-weight: bold }
+.statevis {
+  position: fixed;
+  right: 2em;
+  top: 2em;
+  z-index: -1;
+}
+		</style>
+	</head>
+	<body>
+		<a ui-sref="hello" ui-sref-active="active">Hello</a>
+		<a ui-sref="about" ui-sref-active="active">About</a>
+		<hr/>
+		Custom state : <input ng-model="dynamicState"/><button ng-click="loadDynamicState(dynamicState)">Load Dynamic State</button><br/>
+
+		<ui-view></ui-view>
+
+		<uir-state-vis class="statevis" width="300" height="100"></uir-state-vis>
+
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="app.js"></script>
+
+		<script src="../bower_components/d3/d3.js"></script>
+		<script src="https://npmcdn.com/ui-router-visualizer@1"></script>
+	</body>
+</html>
