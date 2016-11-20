@@ -6,7 +6,9 @@
 	<button ui-sref="signin">Connecte toi&nbsp;!</button>
 </mobile>
 <pc ng-show="$root.account">
-	<h1>Bienvenue {{$root.account.firstname}} {{$root.account.lastname | uppercase }} en version PC&nbsp;!</h1>
+	<div>
+		<h1>Bienvenue {{$root.account.firstname}} {{$root.account.lastname | uppercase }} en version PC&nbsp;!</h1>
+	</div>
 </pc>
 <pc ng-hide="$root.account">
 	<div>

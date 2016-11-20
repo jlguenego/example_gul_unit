@@ -39,3 +39,45 @@ signin > mobile {
 	background-image: url('../../../../img/suzana.jpg');
 }
 
+/* PC */
+
+signin > pc {
+	display: block;
+	margin: 0px;
+	padding: 20px;
+	color: hsla(120, 100%, 20%, 1);
+	background-image: url('../../../../img/phare-and-church.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 960px;
+}
+
+signin > pc > form {
+	display: block;
+	margin: 0px;
+	color: hsla(120, 100%, 20%, 1);
+	background-color: hsla(120, 100%, 90%, 1);
+	width: 300px;
+	padding: 0px;
+	margin: 10px;
+}
+
+signin > pc > form > table {
+	width: 100%;
+	padding: 10px;
+}
+
+signin > pc > form input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 10px;
+	margin: 20px 0px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+signin > pc > form input[type=submit] {
+	background-color: hsla(120, 100%, 20%, 1);
+	color: white;
+}

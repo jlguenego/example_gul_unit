@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('myApp', ['ngSanitize', 'jlg-route', 'jlg-navigation', 'jlg-debug-events']);
+	var app = angular.module('myApp', ['ngSanitize', 'jlg-route', 'jlg-navigation', 'jlg-debug-events', 'jlg-menu']);
 
 	app.component('jlgHeader', {
 		controller: function() {
@@ -62,27 +62,6 @@
 			};
 		},
 		template: '<style ng-bind-html="$ctrl.css"></style>'
-	});
-
-	app.component('jlgMenu', {
-		controller: function() {
-			'ngInject';
-			console.log('jlgMenu controller', arguments, this);
-			var ctrl = this;
-
-			this.isMenuOn = false;
-			this.off = function() {
-				console.log('off');
-				this.isMenuOn = false;
-			};
-
-			this.toggle = function() {
-				console.log('toggle');
-				this.isMenuOn = !this.isMenuOn;
-			};
-		},
-		controllerAs: 'jlgMenu',
-		templateUrl: 'tmpl/jlg-menu.html'
 	});
 
 	app.component('imgSvg', {
