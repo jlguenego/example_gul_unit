@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Bind Once</title>
+	</head>
+	<body ng-init="myVariable = 'coucou'">
+		<input type="text" ng-model="myVariable" /><br/>
+		myVariable: {{myVariable}}<br/>
+		myVariable (again): <span ng-bind="myVariable"></span><br/>
+		myVariable bound once: {{::myVariable}}<br/>
+		myVariable bound once (again): <span ng-bind="::myVariable"></span><br/>
+
+		<script src="../bower_components/angular/angular.js"></script>
+	</body>
+</html>
