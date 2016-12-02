@@ -12,7 +12,13 @@
 			<input type="text" ng-model="data.password" ui-validate="{password: 'isPassword($value)'}" /><br/>
 			Confirm Password<br/>
 			<input type="text" ng-model="data.confirmPassword" ui-validate="{confirmPassword: '$value === data.password'}" ui-validate-watch="'[ data.password ]'"/><br/>
+			Département<br/>
+			<input type="text" ng-model="data.departement" ng-pattern="'[0-9]{2}'" /><br/>
+
+
+
 			<button ng-click="doSomething()" ng-disabled="form.$invalid" >Valider</button>
+
 		</form>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="../bower_components/angular-ui-validate/dist/validate.js"></script>
