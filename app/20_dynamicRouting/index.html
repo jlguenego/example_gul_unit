@@ -17,8 +17,9 @@
 		</style>
 	</head>
 	<body>
-		<a ui-sref="hello" ui-sref-active="active">Hello</a>
-		<a ui-sref="about" ui-sref-active="active">About</a>
+		<span ng-repeat="state in states">
+			<a ui-sref="{{state.name}}" ui-sref-active="active">{{state.name}}</a>
+		</span>
 		<hr/>
 		Custom state : <input ng-model="dynamicState"/><button ng-click="loadDynamicState(dynamicState)">Load Dynamic State</button><br/>
 

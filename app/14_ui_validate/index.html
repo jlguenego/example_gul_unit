@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>ui-validate Example</title>
+	</head>
+	<body>
+		<form name="form" />
+			Numéro de Sécu<br/>
+			<input type="text" ng-model="data.nir" ui-validate="{nir: 'isNir($value)'}" /><br/>
+			Password<br/>
+			<input type="text" ng-model="data.password" ui-validate="{password: 'isPassword($value)'}" /><br/>
+			Confirm Password<br/>
+			<input type="text" ng-model="data.confirmPassword" ui-validate="{confirmPassword: '$value === data.password'}" ui-validate-watch="'[ data.password ]'"/><br/>
+			<button ng-click="doSomething()" ng-disabled="form.$invalid" >Valider</button>
+		</form>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/angular-ui-validate/dist/validate.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
