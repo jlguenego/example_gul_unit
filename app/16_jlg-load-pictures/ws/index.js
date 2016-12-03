@@ -33,6 +33,6 @@ router.post('/upload-form-with-nice-pictures', upl, function(req, res, next) {
 			fs.rename(spec.path, targetPath);
 		}
 	}
-	res.send('OK');
+	res.json(req.files);
 });
 

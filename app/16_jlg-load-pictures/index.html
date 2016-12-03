@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -16,13 +16,14 @@
 			$('#fileupload').fileupload({
 				dataType: 'json',
 				done: function (e, data) {
-					$.each(data.result.files, function (index, file) {
-						$('<p/>').text(file.name).appendTo(document.body);
+					console.log('done', arguments);
+					$.each(data.result.pictures, function (index, file) {
+						console.log('appending', arguments);
+						$('<p/>').text(file.originalname).appendTo(document.body);
 					});
 				}
 			});
 		});
 		</script>
-
 	</body>
 </html>
