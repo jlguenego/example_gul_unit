@@ -23,6 +23,7 @@
   "homepage": "https://github.com/jlguenego/example_gul_unit#readme",
   "devDependencies": {
     "express": "4.14.0",
+    "multer": "1.2.0",
     "serve-index": "1.8.0"
   },
   "dependencies": {}
