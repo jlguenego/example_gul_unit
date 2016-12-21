@@ -17,7 +17,11 @@ router.post('/log', function(req, res) {
 	console.log('appending to trace.log', req.body);
 	var text = '';
 	for (var i = 0; i < req.body.length; i++) {
-		text += '[' + req.body[i] + ']';
+		text += req.body[i][0] + '\n';
+		for (var j = 1; j < req.body[i].length; j++) {
+			text += req.body[i][j] + " ";
+		}
+		text += '\n';
 		text += '\n';
 	}
 
