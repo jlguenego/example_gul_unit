@@ -19,7 +19,7 @@
 			scope: false,
 			require: '?ngModel',
 			link: function (scope, element, attr, ctrl) {
-				if (attr.type !== 'stars' || ctrl === undefined) {
+				if (attr.type !== 'stars' || ctrl === undefined || ctrl === null) {
 					return;
 				}
 				console.log('input type="stars"', arguments);
@@ -52,9 +52,9 @@
 					// var linkingFn = $compile(elt.contents()); // compare this line with the next one...
 					var linkingFn = $compile(elt);
 					//console.log('compile', compile);
-					console.log('linkingFn', linkingFn.toString());
+					//console.log('linkingFn', linkingFn.toString());
 					var node = linkingFn(scope);
-					console.log('node', node);
+					//console.log('node', node);
 					checkValidity(note);
 				};
 
