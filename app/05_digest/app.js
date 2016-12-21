@@ -3,11 +3,34 @@
 
 	var app = angular.module('myApp', []);
 
+	var timer = 0;
+
+
+
+
+
+	app.config(['$provide', function ($provide) {
+		$provide.decorator('$browser', function($delegate) {
+			var $$checkUrlChange = $delegate.$$checkUrlChange;
+			console.log('this', this);
+			console.log('$delegate', $delegate);
+
+
+			$delegate.$$checkUrlChange = function () {
+				console.log.call(console, 'digest start');
+				timer = performance.now();
+				$$checkUrlChange.apply($delegate, arguments);
+			};
+
+			return $delegate;
+		});
+	}]);
+
 	// Just to look how much time take a digest cycle.
 	app.run(function($rootScope, $timeout) {
 		'ngInject';
 
-		function postDigest(callback) {
+		var postDigest = function(callback) {
 			var unregister = $rootScope.$watch(function() {
 				unregister();
 				$timeout(function() {
@@ -15,10 +38,11 @@
 					postDigest(callback);
 				}, 0, false);
 			});
-		}
+		};
 
 		postDigest(function() {
-			console.log('end of digest');
+			var diff = performance.now() - timer;
+			console.log('end of digest', diff);
 		});
 
 		$rootScope.logScope = function() {
