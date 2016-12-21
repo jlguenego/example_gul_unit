@@ -15,7 +15,7 @@
 
 			var array = [];
 			var log = function() {
-				console.log(arguments);
+				console.log.apply(console, arguments);
 				var args = Array.prototype.map.call(arguments, function(n) {
 					if (typeof n === 'object') {
 						return CircularJSON.stringify(n);
@@ -42,7 +42,7 @@
 			$delegate.info = log;
 
 			$delegate.log = function() {
-				log();
+				log.apply(console, arguments);
 				send();
 			};
 
