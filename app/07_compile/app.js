@@ -16,10 +16,10 @@
 		'ngInject';
 		return {
 			restrict: 'E',
-			scope: {},
-			require: 'ngModel',
+			scope: false,
+			require: '?ngModel',
 			link: function (scope, element, attr, ctrl) {
-				if (attr.type !== 'stars') {
+				if (attr.type !== 'stars' || ctrl === undefined) {
 					return;
 				}
 				console.log('input type="stars"', arguments);
@@ -33,8 +33,8 @@
 					var html = '';
 					var note = Number((ctrl.$viewValue === '') ? undefined : ctrl.$viewValue);
 					note = (isNaN(note)) ? undefined : note;
-					note = (note > 5) ? 5 : note;
-					note = (note < 0) ? 0 : note;
+					note = (note > 5) ? undefined : note;
+					note = (note < 0) ? undefined : note;
 					if (note === undefined) {
 						for (var i = 0; i < total; i++) {
 							html += '<img ng-click="update(' + (i + 1) + ')" src="img/gray_star.png" />';
@@ -66,8 +66,7 @@
 				};
 
 				var checkValidity = function(note) {
-					var validForOutOfBounds = (!isNaN(note)) && note >= 0 && note <=5;
-					ctrl.$setValidity('outOfBounds', validForOutOfBounds);
+					ctrl.$setValidity('Star', note !== undefined);
 				};
 
 

@@ -5,10 +5,6 @@
 
 	var timer = 0;
 
-
-
-
-
 	app.config(['$provide', function ($provide) {
 		$provide.decorator('$browser', function($delegate) {
 			var $$checkUrlChange = $delegate.$$checkUrlChange;
