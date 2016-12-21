@@ -1,9 +1,12 @@
 var express = require('express');
 var serveIndex = require('serve-index');
+var bodyParser = require('body-parser');
+
 
 
 
 var app = express();
+app.use(bodyParser.json());
 
 var htdocs = '.';
 
@@ -23,6 +26,9 @@ app.use(function(req, res, next) {
 
 var ws16 = require('./app/16_jlg-load-pictures/ws/index.js');
 app.use('/app/16_jlg-load-pictures/ws', ws16);
+
+var ws18 = require('./app/18_log/ws/index.js');
+app.use('/app/18_log/ws', ws18);
 
 app.use(express.static(htdocs));
 app.use(serveIndex(htdocs, {icons: true}));
