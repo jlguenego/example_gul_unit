@@ -8,21 +8,30 @@
 	// see http://stackoverflow.com/questions/7505623/colors-in-javascript-console
 	// see http://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number
 
+
 	app.config(function($provide) {
 		$provide.decorator('$log', function $logDecorator($delegate, $injector) {
 			'ngInject';
 
-
-
-			var stack = [];
+			var array = [];
 			var max = 4;
 			var log = function() {
 				console.log(arguments);
-				stack.push(arguments);
-				if (stack.length > max) {
+				var args = Array.prototype.map.call(arguments, function(n) {
+					if (typeof n === 'object') {
+						return CircularJSON.stringify(n);
+					}
+					return n;
+				});
+				var st = new Error().stack;
+				var item = st.split('\n')[2];
+				var matches = item.match(/at (.*)/);
+				args.unshift(matches[1]);
+				array.push(args);
+				if (array.length > max) {
 					var $http = $injector.get('$http');
-					$http.post('ws/log', stack);
-					stack = [];
+					$http.post('ws/log', array);
+					array = [];
 				}
 			};
 

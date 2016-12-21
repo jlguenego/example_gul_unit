@@ -15,7 +15,13 @@ router.use(function(req, res, next) {
 
 router.post('/log', function(req, res) {
 	console.log('appending to trace.log', req.body);
-	fs.appendFileAsync('trace.log', JSON.stringify(req.body) + '\n').then(function() {
+	var text = '';
+	for (var i = 0; i < req.body.length; i++) {
+		text += '[' + req.body[i] + ']';
+		text += '\n';
+	}
+
+	fs.appendFileAsync('trace.log', text).then(function() {
 		res.json({});
 	});
 });
