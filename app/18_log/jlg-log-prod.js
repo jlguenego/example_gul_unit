@@ -14,7 +14,6 @@
 			'ngInject';
 
 			var array = [];
-			var max = 4;
 			var log = function() {
 				console.log(arguments);
 				var args = Array.prototype.map.call(arguments, function(n) {
@@ -28,11 +27,12 @@
 				var matches = item.match(/at (.*)/);
 				args.unshift(matches[1]);
 				array.push(args);
-				if (array.length > max) {
-					var $http = $injector.get('$http');
-					$http.post('ws/log', array);
-					array = [];
-				}
+			};
+
+			var send = function() {
+				var $http = $injector.get('$http');
+				$http.post('ws/log', array);
+				array = [];
 			};
 
 			$delegate.debug = log;
@@ -41,7 +41,11 @@
 
 			$delegate.info = log;
 
-			$delegate.log = log;
+			$delegate.log = function() {
+				log();
+				send();
+			};
+
 
 			$delegate.warn = log;
 			return $delegate;
