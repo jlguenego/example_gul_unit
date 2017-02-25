@@ -22,11 +22,15 @@
 		$stateProvider.state(aboutState);
 	});
 
-	app.run(function($rootScope, $window) {
+	app.run(function($transitions) {
 		'ngInject';
-		$rootScope.click = function(str) {
-			$window.alert(str);
-		};
+		$transitions.onStart({}, function(trans) {
+			console.log('onStart', arguments);
+			var from = trans.$from();
+			console.log('from', from);
+			var to = trans.$to();
+			console.log('to', to);
+		});
 	});
 
 })();
