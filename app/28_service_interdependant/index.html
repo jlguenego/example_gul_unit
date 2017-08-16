@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="main">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Service interdependant</title>
+	</head>
+	<body ng-controller="MyCtrl">
+		<ul>
+			<li>Service A depends on service B.</li>
+			<li>Service B depends on service A.</li>
+		</ul>
+
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
