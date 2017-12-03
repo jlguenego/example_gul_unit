@@ -14,7 +14,7 @@
   "homepage": "https://github.com/jlguenego/example_gul_unit",
   "ignore": [
     "**/.*",
-    "node_modules",
+    "../node_modules",
     "bower_components",
     "test",
     "tests"
