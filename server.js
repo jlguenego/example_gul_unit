@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 var htdocs = '.';
 
-var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*', '/app/01_interceptor/wsx/*'];
+var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*'];
 
 app.all(slowUrl, function(req, res, next) {
 	console.log('slow url - req.url', req.url);
