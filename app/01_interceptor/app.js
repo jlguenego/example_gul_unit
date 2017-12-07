@@ -31,7 +31,7 @@
 				await s2;
 				await s3;
 				await s4;
-				const s5 = xhr('./ws/s5');
+				const s5 = await xhr('./ws/s5');
 			} catch (e) {
 				console.error('error', e);
 			}
