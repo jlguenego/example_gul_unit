@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="main">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Compile</title>
-		<style>
-.ng-scope {
-	border: 1px solid red;
-	background-color: hsla(0, 100%, 90%, 0.2);
-}
-		</style>
+		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="../modules/jlg-stars/jlg-stars.css">
 	</head>
 	<body>
+		<h1>Compile</h1>
+		<ul>
+			<li>2 phases: compile and link.</li>
+			<li>compile takes only the DOM in input.</li>
+			<li>link takes only the scope in input.</li>
+			<li><code>$compile($element.contents())($scope);</code></li>
+		</ul>
 		<form name="formCtrl" ng-submit="">
-			<input type="stars" ng-model="note" /><br/>
-			<input type="stars" /><br/>
-			<input type="text" ng-model="note" /><br/>
-			<input type="text" ng-model="note" /><br/>
-			<input type="submit" value="Submit" ng-model="f" ng-disabled="formCtrl.$invalid"/><br/>
+			<jlg-stars name="myNote" ng-model="note"></jlg-stars>
 		</form>
-		<button ng-click="logScope()">Log</button>
 
 		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
+		<script src="../modules/jlg-stars/jlg-stars.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>
