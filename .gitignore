@@ -1,9 +1,8 @@
 /node_modules
+/wpk
 *.log
 # dist is the output directory for gulp
 dist/*
-# wpk is the output directory for webpack
-*/wpk/*
 # database file
 db.json
 
