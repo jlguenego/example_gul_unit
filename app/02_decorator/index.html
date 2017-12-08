@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Decorator</title>
-	</head>
-	<body>
-		<p>Show an example of decoration on $rootScope by modifying $emit in order to debug when an scope event occurs.</p>
-		<p>Exercice: do a module jlg-debug that wraps this functionality.</p>
-		<button ng-click="start();">Start</button>
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Decorator</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<h1>Decorator</h1>
+	<ul>
+		<li><code>$rootScope.$emit</code> is decorated in order to add it a log.</li>
+	</ul>
+	<button ng-click="start();">Start</button>
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../modules/jlg-debug-emit.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Watch and $$watchers</title>
-	</head>
-	<body>
-		<p>Le but de cet exemple est de voir les watchers se mettre en place. Combien il y en a ? Comment réduire leur nombre ? Essayer le bind-once.</p>
-		<input ng-model="message" /><br/>
-		message: {{message}}<br/>
-		<button ng-click="logScope()">Log</button>
+<html ng-app="main">
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Watchers</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<h1>Watchers</h1>
+	<ul>
+		<li>Install <a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Batarang</a> to observe the watchers.</li>
+		<li>How to estimate the watchers ?
+
+			<ul>
+				<li>ng-model</li>
+				<li ng-non-bindable>{{...}} (expression)</li>
+				<li>ng-disabled, ng-bind, ng-repeat, ng-show, ng-hide, etc. : the directive that needs to observe the model.</li>
+			</ul>
+		</li>
+	</ul>
+	<jlg-array array="array"></jlg-array>
+
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>

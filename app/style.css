@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -15,11 +14,11 @@ button {
     border: 1px solid black;
     background-color: #eee;
     font-size: inherit;
-    box-shadow: 2px 2px 39px -8px rgba(0,0,0,0.8);
+    box-shadow: 2px 2px 2em -8px #aaa;
 }
 
 button:hover {
-    box-shadow: 2px 2px 45px -8px rgba(0,0,0,0.8);
+    box-shadow: 2px 2px 2.5em -8px #888;
 }
 
 button:active {
@@ -31,4 +30,50 @@ jumbo {
     padding: 1em;
     text-align: center;
     font-size: 200%;
+}
+
+label>span {
+    padding-right 1em;
+    font-weight: bold;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 2s;
+}
+
+.odd-gray:nth-child(even) {
+    background-color: #eee;
 }

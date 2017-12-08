@@ -29,6 +29,8 @@
     "bluebird": "3.4.6",
     "body-parser": "1.15.2",
     "css-loader": "^0.28.7",
+    "eslint": "^4.12.1",
+    "eslint-config-google": "^0.9.1",
     "express": "4.14.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
