@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Injector</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<h1>AngularJS injector</h1>
+	<ul>
+		<li>No <code>ng-app</code> needed.</li>
+		<li>Using directly the <code>angular.injector</code>. </li>
+	</ul>
+	{{message}} <span ng-show="false">(Oh le <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">FOUC</a> !!!)</span>
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="wpk/bundle.js"></script>
+</body>
+
+</html>

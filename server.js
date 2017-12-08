@@ -6,6 +6,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use('/app/30_bootstrap', require('./app/30_bootstrap/server.js'));
+app.use('/app/31_injector', require('./app/31_injector/server.js'));
 
 var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*'];
 
