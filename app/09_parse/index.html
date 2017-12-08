@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Parse example</title>
-	</head>
-	<body>
-		<p>La même chose avec parse (chercher dans angular.js la chaine '$eval:')</p>
-		<div jlg-transform="'in uppercase, ' + $value + ' is written ' + uppercase($value)">Welcome</div>
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parse example</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<h1>Example with parse</h1>
+	<ul>
+		<li>Look in the file <code>angular.js</code> for the string
+			<code>$eval:</code> and you will see the similarity with <code>$parse</code>.
+		</li>
+	</ul>
+	<div jlg-transform="'in uppercase, ' + $value + ' is written ' + uppercase($value)">Welcome</div>
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>
