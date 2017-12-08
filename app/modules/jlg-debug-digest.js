@@ -4,12 +4,24 @@
 	var app = angular.module('jlg-debug-digest', []);
 
 	var timer = 0;
+	var isStarted = false;
+	var id = 0;
+
+	var log = console.log.bind(
+		console,
+		'%cjlg-debug-digest:',
+		'color: green');
+
 
 	app.config(['$provide', function($provide) {
 		$provide.decorator('$browser', function($delegate) {
 			var $$checkUrlChange = $delegate.$$checkUrlChange;
 			$delegate.$$checkUrlChange = function() {
-				console.log.call(console, 'digest start');
+				if (isStarted) {
+					return;
+				}
+				isStarted = true;
+				log(id, 'start');
 				timer = performance.now();
 				$$checkUrlChange.apply($delegate, arguments);
 			};
@@ -30,7 +42,9 @@
 
 		postDigest(function() {
 			var diff = performance.now() - timer;
-			console.log('end of digest', diff);
+			log(id, 'end - duration', diff.toFixed(3));
+			isStarted = false;
+			id++;
 		});
 
 	});

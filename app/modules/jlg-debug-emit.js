@@ -8,7 +8,7 @@
 			var emit = $delegate.$emit;
 			$delegate.$emit = function() {
 				var args = Array.prototype.slice.call(arguments);
-				args.unshift('jlg-debug-emit:');
+				args.unshift('%cjlg-debug-emit:', 'color: blue');
 				console.log(...args);
 				emit.apply(this, arguments);
 			};

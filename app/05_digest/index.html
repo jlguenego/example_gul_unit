@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Digest</title>
+		<link rel="stylesheet" href="../style.css">
 	</head>
 	<body>
-		<p>Look at how much a digest process takes in milliseconds.</p>
-		<p>Exercice: put the perf stuff in a module that you can add or remove</p>
-		<input ng-model="test" /><br/>
-		<button ng-click="logScope()">Log</button>
-		<button ng-click="doNotDigest()">Do not digest well</button>
-
+		<h1>Digest</h1>
+		<ul>
+			<li>Look at how much a digest process takes in milliseconds.</li>
+			<li>Question: why the <code>Reset</code> button does not work well ?</li>
+		</ul>
+		<div class="flex">
+			<label><span>Write text :</span><input ng-model="test" /></label>
+			<button ng-click="reset()">Reset</button>
+		</div>
+		
+		
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../modules/jlg-debug-digest.js"></script>
 		<script src="app.js"></script>

@@ -7,7 +7,7 @@
 	app.run(function($rootScope, $timeout) {
 		'ngInject';
 
-		$rootScope.doNotDigest = function() {
+		$rootScope.reset = function() {
 			setTimeout(function() {
 				$rootScope.test = '';
 				console.log('message reset');
