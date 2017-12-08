@@ -42,7 +42,7 @@
 
 		postDigest(function() {
 			var diff = performance.now() - timer;
-			log(id, 'end - duration', diff.toFixed(3));
+			log(id, 'end - duration:', diff.toFixed(3), 'ms');
 			isStarted = false;
 			id++;
 		});

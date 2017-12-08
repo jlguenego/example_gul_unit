@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Apply</title>
-	</head>
-	<body>
-		<p>When do we need to $rootScope.digest() ? </p>
-		<input ng-model="test" /><br/>
-		<button ng-click="logScope()">Log</button>
-		<button ng-click="applyWell()">apply well</button>
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apply</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+	<h1>Apply</h1>
+	<ul>
+		<li>Apply eval an expression</li>
+		<li>and do a <code>$rootScope.digest()</code></li>
+	</ul>
+
+	<div class="flex">
+		<label><span>Write text :</span><input ng-model="test" /></label>
+		<button ng-click="reset()">Reset</button>
+	</div>
+
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../modules/jlg-debug-digest.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>
