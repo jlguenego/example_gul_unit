@@ -25,7 +25,6 @@
 				console.error('error', e);
 			}
 			console.log('end');
-			
 		};
 	});
 
