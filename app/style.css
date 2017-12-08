@@ -35,7 +35,7 @@ jumbo {
 }
 
 label>span {
-    padding-right 1em;
+    padding-right: 1em;
     font-weight: bold;
 }
 
@@ -56,7 +56,7 @@ label>span {
 .flex {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .space-between {
@@ -78,4 +78,14 @@ label>span {
 
 .odd-gray:nth-child(even) {
     background-color: #eee;
+}
+
+.w-10em {
+    display: inline-block;
+    width: 10em;
+}
+
+.w-5em {
+    display: inline-block;
+    width: 5em;
 }
