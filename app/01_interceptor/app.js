@@ -6,12 +6,13 @@
 	app.run(function ($rootScope, $http, $q) {
 		'ngInject';
 		$rootScope.start = function () {
+			var prefix = '../../ws';
 			console.log('start', arguments);
-			$http.get('./ws/s1')
+			$http.get(prefix + '/s1')
 				.then(function (response) {
-					return $q.all([$http.get('./ws/s2'), $http.get('./ws/s3'), $http.get('./ws/s4')]);
+					return $q.all([$http.get(prefix + '/s2'), $http.get(prefix + '/s3'), $http.get(prefix + '/s4')]);
 				}).then(function (response) {
-					return $http.get('./ws/s5');
+					return $http.get(prefix + '/s5');
 				}).catch(function (error) {
 					console.error('error', error);
 				});
