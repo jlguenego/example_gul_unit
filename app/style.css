@@ -22,6 +22,10 @@ button:hover {
     box-shadow: 2px 2px 45px -8px rgba(0,0,0,0.8);
 }
 
+button:active {
+    background-color: #ddd;
+}
+
 jumbo {
     display: block;
     padding: 1em;
