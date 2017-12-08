@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BindToController Example</title>
+		<link rel="stylesheet" href="../style.css">
 	</head>
 	<body>
+		<h1>BindToController</h1>
+		<ul>
+			<li>It is recommanded now to store the model in the controller instead of the scope.</li>
+			<li>It is also recommanded to call the controller <code>$ctrl</code>.</li>
+			<li>When using parent directive, it is better to access the model through the parent controller instead of the parent scope.</li>
+		</ul>
 		Toto: <input ng-model="toto" /><br/>
 
 		<dir1 truc="toto"></dir1>
