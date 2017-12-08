@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>Interceptor</title>
-	</head>
-	<body>
-		<span us-spinner="{radius:30, width:8, length: 16}" spinner-on="showSpinner"></span>
-		<p>This example show 2 interceptors (jlg-delay and jlg-spinner).</p>
-		<p>Exercice: filter on webservice only and not html template</p>
-		<button ng-click="start();">Start</button>
 
-		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="../../node_modules/spin.js/spin.js"></script>
-		<script src="../../node_modules/angular-spinner/dist/angular-spinner.js"></script>
-		<script src="app.js"></script>
-		<script src="../modules/jlg-delay.js"></script>
-		<script src="../modules/jlg-spinner.js"></script>
-	</body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Interceptor</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<span us-spinner="{radius:30, width:8, length: 16}" spinner-on="showSpinner"></span>
+	<h1>Interceptors</h1>
+	<ul>
+		<li>Each $http request can be intercepted and modified before to be really sent to the server.</li>
+		<li>Each $http response can be intercepted and modified before to be really sent back to the client.</li>
+	</ul>
+	<ul>
+		<li>This example show 2 interceptors: jlg-delay and jlg-spinner.</li>
+		<li>Open the console (<code>Control+Shift+I</code>) to check the logs.</li>
+	</ul>
+	<jumbo><button ng-click="start();">Start</button></jumbo>
+	
+
+
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/spin.js/spin.js"></script>
+	<script src="../../node_modules/angular-spinner/dist/angular-spinner.js"></script>
+	<script src="app.js"></script>
+	<script src="../modules/jlg-delay.js"></script>
+	<script src="../modules/jlg-spinner.js"></script>
+</body>
+
 </html>
