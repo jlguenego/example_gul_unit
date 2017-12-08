@@ -1,14 +1,8 @@
-const webpack = require('webpack');
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: {
-		'02_decorator': './app/02_decorator/app.js',
-	},
 	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, './wpk')
+		filename: 'bundle.js',
 	},
 	module: {
 		rules: [{

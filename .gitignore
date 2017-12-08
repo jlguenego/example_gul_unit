@@ -1,5 +1,6 @@
 /node_modules
-/wpk
+wpk/
+bundle.js
 *.log
 # dist is the output directory for gulp
 dist/*

@@ -1,14 +1,11 @@
-var express = require('express');
-var serveIndex = require('serve-index');
-var bodyParser = require('body-parser');
-
-
-
+const express = require('express');
+const serveIndex = require('serve-index');
+const bodyParser = require('body-parser');
 
 var app = express();
 app.use(bodyParser.json());
 
-var htdocs = '.';
+app.use('/app/30_bootstrap', require('./app/30_bootstrap/server.js'));
 
 var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*'];
 
@@ -30,6 +27,7 @@ app.use('/app/16_jlg-load-pictures/ws', ws16);
 var ws18 = require('./app/18_log/ws/index.js');
 app.use('/app/18_log/ws', ws18);
 
+const htdocs = '.';
 app.use(express.static(htdocs));
 app.use(serveIndex(htdocs, {icons: true}));
 

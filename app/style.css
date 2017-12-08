@@ -4,7 +4,9 @@ body {
 }
 
 code {
-    background-color: #eee;
+    padding: 0.1em 0.2em;
+    font-size: 1.3em;
+    background-color: hsl(0, 0%, 98%);
 }
 
 button {

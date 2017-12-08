@@ -41,7 +41,8 @@
     "serve-index": "1.8.0",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^1.12.2"
   },
   "dependencies": {
     "angular": "^1.6.7",
