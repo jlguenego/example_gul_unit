@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Eval example</title>
+		<link rel="stylesheet" href="../style.css">
 	</head>
 	<body>
-		<div jlg-transform="'Ah que ' + $value + ' ' + $value + ' ' + uppercase($value)">coucou</div>
+		<h1>Eval example</h1>
+		<div jlg-transform="'in uppercase, ' + $value + ' is written ' + uppercase($value)">hello</div>
 
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="app.js"></script>
