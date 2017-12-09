@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="main">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>$templateCache Example</title>
+		<link rel="stylesheet" href="../style.css">
 		<style>
 [ng-click] {
 	cursor: pointer;
@@ -10,13 +11,24 @@
 		</style>
 	</head>
 	<body>
+		<h1>Template cache</h1>
+		<p>3 methods exists to store HTML templates:</p>
+		<ul>
+			<li>A file that is called with AJAX.</li>
+			<li>A template declared in the HTML document with the element <code>script</code> with type <code>text/ng-template</code>.</li>
+			<li>A template declared in JS and stored with the <code>$templateCache</code> service.</li>
+		</ul>
+		<h2>Recommandation</h2>
+		<p>Use webpack with html-loader.</p>
+		<hr>
 		<div ng-include="'./t1.html'"></div>
 		<div ng-include="'./t2.html'"></div>
 		<div ng-include="'./t3.html'"></div>
+		<my-template></my-template>
 		<script type="text/ng-template" id="./t2.html">
 <b ng-click="click('yeahhh')">hello</b>
 		</script>
 		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
+		<script src="wpk/bundle.js"></script>
 	</body>
 </html>
