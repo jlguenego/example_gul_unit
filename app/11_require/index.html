@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="main">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Require Example</title>
+		<link rel="stylesheet" href="../style.css">
 	</head>
 	<body>
+		<h1>Require</h1>
+		<ul>
+			<li>Require is used inside directive (or component) to get a controller from another directive (resp. component).</li>
+			<li>So it is much better to use controller instead of link.</li>
+			<li>Note: link is now deprecated. In fact, element directive are now deprecated.</li>
+		</ul>
+		<h2>Note: Webpack is now used</h2>
 		<grand-parent-dir>
 			<parent-dir>
 				<child-dir></child-dir>
@@ -18,6 +26,6 @@
 			</parent-dir>
 		</grand-parent-dir>
 		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
+		<script src="wpk/bundle.js"></script>
 	</body>
 </html>
