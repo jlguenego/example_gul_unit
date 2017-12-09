@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="main">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>BindToController Example</title>
 		<link rel="stylesheet" href="../style.css">
+		<style>
+		my-directive {
+			display: block;
+			margin: 1rem;
+			padding: 1rem;
+			background-color: #eee;
+		}
+		</style>
 	</head>
-	<body>
+	<body ng-init="m = 'hello'">
 		<h1>BindToController</h1>
 		<ul>
 			<li>It is recommanded now to store the model in the controller instead of the scope.</li>
 			<li>It is also recommanded to call the controller <code>$ctrl</code>.</li>
 			<li>When using parent directive, it is better to access the model through the parent controller instead of the parent scope.</li>
 		</ul>
-		Toto: <input ng-model="toto" /><br/>
+		Enter a message: <input ng-model="m" /><br/>
 
-		<dir1 truc="toto"></dir1>
+		<my-directive message="m"></my-directive>
 
 		<parent-dir>
 			<child-dir></child-dir>
@@ -22,6 +30,6 @@
 			<child-dir></child-dir>
 		</parent-dir>
 		<script src="../../node_modules/angular/angular.js"></script>
-		<script src="app.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>
