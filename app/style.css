@@ -27,6 +27,15 @@ button:active {
     background-color: #ddd;
 }
 
+button.green {
+    background-color: hsl(120, 100%, 30%);
+    color: white;
+}
+
+button.green:hover {
+    background-color: hsl(120, 100%, 25%);
+}
+
 jumbo {
     display: block;
     padding: 1em;
@@ -88,4 +97,53 @@ label>span {
 .w-5em {
     display: inline-block;
     width: 5em;
+}
+
+form {
+    display: inline-block;
+    margin: 0;
+    padding: 0.3em;
+    background-color: hsl(60, 50%, 95%);
+    width: 30em;
+}
+
+label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.3em;
+}
+
+label>div {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.error input {
+    background-color: hsl(0, 100%, 95%);
+}
+
+label>div>ul {
+    display: none;
+}
+
+label.error>div>ul {
+    display: block;
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: none;
+    color: red;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+form .submit {
+    display: block;
+    padding: 1em 0em;
+}
+
+form .submit>button {
+    margin: 0em;
 }
