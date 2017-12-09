@@ -2,9 +2,10 @@ module.exports = {
     "extends": "google",
     "parserOptions": {
         "ecmaVersion": 6,
-        "sourceType": "script"
+        "sourceType": "module"
     },
     "rules": {
+        "arrow-parens": 0,
         "no-var": 0,
         "object-curly-spacing": 0,
         "no-tabs": 0,

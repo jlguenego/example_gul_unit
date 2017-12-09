@@ -1,12 +1,13 @@
 const express = require('express');
 const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
+const webpackRouter = require('./webpack.router.js');
 
 var app = express();
 app.use(bodyParser.json());
 
-app.use('/app/30_bootstrap', require('./app/30_bootstrap/server.js'));
-app.use('/app/31_injector', require('./app/31_injector/server.js'));
+app.use(webpackRouter);
+
 
 var slowUrl = ['/app/25_compiling_lifecycle/tmpl/*'];
 
