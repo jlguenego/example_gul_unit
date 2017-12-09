@@ -10,8 +10,13 @@
 			controller: function() {
 				console.log('I am ctrl myDirective1');
 			},
-			link: function() {
-				console.log('I am myDirective1');
+			link: {
+				pre: function() {
+					console.log('I am pre myDirective1');
+				},
+				post: function() {
+					console.log('I am post myDirective1');
+				},
 			}
 		};
 	});
@@ -23,8 +28,13 @@
 			controller: function() {
 				console.log('I am ctrl myDirective2');
 			},
-			link: function() {
-				console.log('I am myDirective2');
+			link: {
+				pre: function() {
+					console.log('I am pre myDirective2');
+				},
+				post: function() {
+					console.log('I am post myDirective2');
+				},
 			}
 		};
 	});
@@ -36,8 +46,13 @@
 			controller: function() {
 				console.log('I am ctrl myDirective3');
 			},
-			link: function() {
-				console.log('I am myDirective3');
+			link: {
+				pre: function() {
+					console.log('I am pre myDirective3');
+				},
+				post: function() {
+					console.log('I am post myDirective3');
+				},
 			}
 		};
 	});
