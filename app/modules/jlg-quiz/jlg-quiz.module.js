@@ -11,7 +11,7 @@ app.service('jlgQuiz', function JLGQuiz() {
 
 app.component('jlgQuiz', {
 	controller: function JLGQuizCtrl($scope, $element, $compile, jlgQuiz) {
-        this.jlgQuiz = jlgQuiz;
+		this.jlgQuiz = jlgQuiz;
 
 		const START = 0;
 		const QUESTION = 1;
@@ -25,13 +25,13 @@ app.component('jlgQuiz', {
 		this.answers = [];
 
 		this.next = () => {
-            console.log('next');
+			console.log('next');
 			if (this.state === START) {
-                if (jlgQuiz.questions.length > 0) {
-                    this.state = QUESTION;
-                } else {
-                    this.state = END;
-                }
+				if (jlgQuiz.questions.length > 0) {
+					this.state = QUESTION;
+				} else {
+					this.state = END;
+				}
 			} else if (this.state === QUESTION) {
 				this.i++;
 				if (this.i === jlgQuiz.questions.length) {
@@ -41,26 +41,35 @@ app.component('jlgQuiz', {
 			this.render();
 		};
 		this.prev = () => {
-            console.log('prev');
+			console.log('prev');
 			if (this.state === END) {
-                if (jlgQuiz.questions.length > 0) {
-                    this.i--;
-                    this.state = QUESTION;
-                } else {
-                    this.state = START;
-                }
+				if (jlgQuiz.questions.length > 0) {
+					this.i--;
+					this.state = QUESTION;
+				} else {
+					this.state = START;
+				}
 			} else if (this.state === QUESTION) {
 				if (this.i === 0) {
 					this.state = START;
 				} else {
-                    this.i--;
-                }
+					this.i--;
+				}
 			}
+			this.render();
+		};
+		this.restart = () => {
+			console.log('restart');
+
+			this.state = START;
+			this.i = 0;
+			this.answers = [];
+
 			this.render();
 		};
 
 		this.render = () => {
-            this.template = templates[this.state];
+			this.template = templates[this.state];
 
 			this.template += footerHtml;
 			$element.html(this.template);
