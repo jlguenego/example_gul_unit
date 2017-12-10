@@ -1,7 +1,9 @@
 <h2>Question {{$ctrl.i}}</h2>
 
-<p>{{$ctrl.jlgQuiz.questions[i].question}}</p>
+<p>{{$ctrl.jlgQuiz.questions[$ctrl.i].question}}</p>
 <form>
-    <label ng-repeat="answer in $ctrl.jlgQuiz.questions[i].answers"><input type="radio" name="answer"> </label>
+	<label ng-repeat="answer in $ctrl.jlgQuiz.questions[$ctrl.i].choices">
+        <div></div>
+		<div><input type="radio" name="answer">{{answer}}</div>
+	</label>
 </form>
-

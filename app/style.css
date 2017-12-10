@@ -43,10 +43,7 @@ jumbo {
     font-size: 200%;
 }
 
-label>span {
-    padding-right: 1em;
-    font-weight: bold;
-}
+
 
 .left {
     float: left;
@@ -111,9 +108,12 @@ label {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    padding: 0;
+    padding: 0.2em;
     margin: 0;
-    margin-bottom: 0.3em;
+}
+
+label:hover {
+    background-color: hsl(60, 50%, 90%);
 }
 
 label>div {
@@ -146,4 +146,10 @@ form .submit {
 
 form .submit>button {
     margin: 0em;
+}
+
+section {
+    display: block;
+    margin: 0;
+    padding: 1em;
 }
