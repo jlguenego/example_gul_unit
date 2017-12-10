@@ -22,6 +22,7 @@ app.component('jlgQuiz', {
 		this.template = templates[this.state];
 
 		this.i = 0;
+		this.answers = [];
 
 		this.next = () => {
             console.log('next');
@@ -66,5 +67,14 @@ app.component('jlgQuiz', {
 			$compile($element.contents())($scope);
 		};
 		this.render();
+
+		$scope.$watch('$ctrl.answers', () => {
+			this.result = 0;
+			for (let i = 0; i < jlgQuiz.questions.length; i++) {
+				if (jlgQuiz.questions[i].correctAnswer === this.answers[i]) {
+					this.result++;
+				}
+			}
+		}, true);
 	}
 });

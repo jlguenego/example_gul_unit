@@ -1,7 +1,7 @@
 <section>
-	<button ng-click="$ctrl.prev()">Prev</button>
-	<button ng-click="$ctrl.next()">Next</button>
+	<button ng-show="$ctrl.state > 0" ng-click="$ctrl.prev()">Prev</button>
+	<button ng-show="$ctrl.state < 2" ng-click="$ctrl.next()">Next</button>
 </section>
 
 
-<p>Debug: {{$ctrl.state}} </p>
+<p>Debug: {{$ctrl.state}} {{$ctrl.answers}}</p>
