@@ -86,22 +86,23 @@ jumbo {
     background-color: #eee;
 }
 
+.w-30em {
+    width: 30em;
+}
+
 .w-10em {
-    display: inline-block;
     width: 10em;
 }
 
 .w-5em {
-    display: inline-block;
     width: 5em;
 }
 
 form {
-    display: inline-block;
+    display: block;
     margin: 0;
     padding: 0.3em;
     background-color: hsl(60, 50%, 95%);
-    width: 30em;
 }
 
 label {

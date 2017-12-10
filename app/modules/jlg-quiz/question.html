@@ -3,7 +3,6 @@
 <p>{{$ctrl.jlgQuiz.questions[$ctrl.i].question}}</p>
 <form>
 	<label ng-repeat="answer in $ctrl.jlgQuiz.questions[$ctrl.i].choices track by $index">
-        <div></div>
 		<div><input type="radio" name="answer" ng-model="$ctrl.answers[$ctrl.i]" ng-value="$index">{{answer}}</div>
 	</label>
 </form>

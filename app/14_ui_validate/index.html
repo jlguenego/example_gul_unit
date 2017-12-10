@@ -10,7 +10,7 @@
 <body ng-controller="MyController as $ctrl">
 	<h1>Formulaire</h1>
 	<p>Please fill this form below.</p>
-	<form name="form" ng-submit="$ctrl.formValidator.check(form) && $ctrl.submit()" novalidate>
+	<form class="w-30em" name="form" ng-submit="$ctrl.formValidator.check(form) && $ctrl.submit()" novalidate>
 		<label ng-class="{error: $ctrl.formValidator.isError(form.nir)}">
 			<div>Numéro de Sécu</div>
 			<div>
