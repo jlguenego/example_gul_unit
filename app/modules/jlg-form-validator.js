@@ -5,10 +5,10 @@
 
 	app.service('jlgFormValidator', function JLGFormValidator() {
 
-        this.isError = function(field) {
-            return field.$invalid && field.$touched && field.$dirty;
-        };
-        
+		this.isError = function(field) {
+			return field.$invalid && field.$touched && field.$dirty;
+		};
+
 		this.check = function(formCtrl) {
 			for (const field in formCtrl) {
 				if (field.substr(0, 1) === '$') {
