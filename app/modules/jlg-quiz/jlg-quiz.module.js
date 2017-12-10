@@ -12,7 +12,7 @@ app.service('jlgQuiz', function JLGQuiz() {
 app.component('jlgQuiz', {
 	controller: function JLGQuizCtrl($scope, $element, $compile, jlgQuiz) {
         this.jlgQuiz = jlgQuiz;
-        
+
 		const START = 0;
 		const QUESTION = 1;
 		const END = 2;
@@ -60,7 +60,6 @@ app.component('jlgQuiz', {
 
 		this.render = () => {
             this.template = templates[this.state];
-			
 
 			this.template += footerHtml;
 			$element.html(this.template);

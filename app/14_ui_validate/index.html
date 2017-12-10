@@ -69,7 +69,7 @@
 		<label ng-class="{error: $ctrl.formValidator.isError(form.phone2)}">
 			<div>Phone2</div>
 			<div>
-					<input type="text" name="phone2" ng-model="data.phone2" ui-validate="{phone: 'isPhone($value)'}" ui-mask="99 99 99 99 99" ui-mask-placeholder ui-mask-placeholder-char="_" required>
+				<input type="text" name="phone2" ng-model="data.phone2" ui-validate="{phone: 'isPhone($value)'}" ui-mask="99 99 99 99 99" ui-mask-placeholder ui-mask-placeholder-char="_" required>
 				<ul>
 					<li ng-show="form.phone2.$error.phone">It is not a french phone number</li>
 					<li ng-show="form.phone2.$error.required">Required field.</li>
